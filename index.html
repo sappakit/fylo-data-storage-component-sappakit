@@ -24,26 +24,30 @@
     <link rel="stylesheet" href="./style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-[url('./images/bg-mobile.png')] bg-cover bg-center">
+  <body
+    class="relative bg-[url('./images/bg-mobile.png')] bg-cover bg-center bg-[var(--background-color)] lg:bg-[url('./images/bg-desktop.png')] lg:bg-bottom lg:bg-[length:100%_50%] lg:bg-no-repeat"
+  >
     <main
-      class="main-section flex justify-center items-center h-screen mx-auto"
+      class="main-layout relative flex flex-col justify-center items-center w-full h-full px-5 lg:px-7"
     >
-      <section class="card-layout-grid grid grid-cols-1 w-[28rem] p-7 gap-5">
+      <article
+        class="card-section flex flex-col justify-center items-center w-full h-full gap-5 lg:flex-row lg:items-end lg:h-[15rem] lg:gap-10"
+      >
         <!-- Logo card section -->
-        <article
-          class="logo-card flex flex-col justify-center items-start h-60 p-12 gap-10 rounded-2xl rounded-tr-[8rem] bg-[var(--card-background-color)] overflow-hidden"
+        <section
+          class="logo-card flex flex-col justify-center items-start w-full max-w-[20rem] p-10 gap-8 rounded-2xl rounded-tr-[6rem] bg-[var(--card-background-color)] overflow-hidden lg:max-w-[25rem] lg:h-full lg:rounded-tr-[7rem] lg:p-14 lg:gap-9"
         >
           <!-- Logo -->
           <img
-            class="w-40 max-w-none"
+            class="w-36 max-w-none lg:w-40"
             src="./images/logo.svg"
             alt="Fylo logo"
           />
 
           <!-- Icon -->
-          <figure class="icon-section flex gap-5">
+          <figure class="icon-section flex gap-4">
             <div
-              class="document-icon flex justify-center items-center w-14 h-14 rounded-xl bg-[var(--icon-background-color)]"
+              class="document-icon flex justify-center items-center size-14 rounded-xl bg-[var(--icon-background-color)]"
             >
               <img
                 class="w-6"
@@ -53,7 +57,7 @@
             </div>
 
             <div
-              class="folder-icon flex justify-center items-center w-14 h-14 rounded-xl bg-[var(--icon-background-color)]"
+              class="folder-icon flex justify-center items-center size-14 rounded-xl bg-[var(--icon-background-color)]"
             >
               <img
                 class="w-7"
@@ -63,7 +67,7 @@
             </div>
 
             <div
-              class="upload-icon flex justify-center items-center w-14 h-14 rounded-xl bg-[var(--icon-background-color)]"
+              class="upload-icon flex justify-center items-center size-14 rounded-xl bg-[var(--icon-background-color)]"
             >
               <img
                 class="w-8"
@@ -72,13 +76,13 @@
               />
             </div>
           </figure>
-        </article>
+        </section>
 
         <!-- Data card section -->
-        <article
-          class="data-card relative flex flex-col justify-cen items-center h-48 px-10 py-7 gap-4 rounded-2xl bg-[var(--card-background-color)]"
+        <section
+          class="data-card relative flex flex-col justify-start items-center w-full max-w-[20rem] min-h-[10.5rem] px-8 pt-8 pb-10 gap-3 rounded-2xl bg-[var(--card-background-color)] lg:justify-center lg:items-start lg:max-w-[42.5rem] lg:min-h-[11.5rem] lg:px-11"
         >
-          <p class="font-extralight text-center">
+          <p class="text-sm font-extralight text-center lg:text-base">
             You’ve used <span class="font-bold">815 GB</span> of your storage
           </p>
 
@@ -99,7 +103,9 @@
             </div>
 
             <!-- Usage number -->
-            <div class="usage-number flex w-full justify-between font-semibold">
+            <div
+              class="usage-number flex justify-between gap-4 w-full text-center font-semibold"
+            >
               <p>0 GB</p>
               <p>1000 GB</p>
             </div>
@@ -107,26 +113,35 @@
 
           <!-- White box -->
           <div
-            class="absolute bottom-0 translate-y-1/2 flex justify-center items-center w-[55%] h-[5.5rem] p-3 rounded-xl bg-[--gbLeft-box-background-color] overflow-hidden"
+            class="white-box absolute bottom-0 translate-y-1/2 flex justify-center items-center w-[55%] h-[4.75rem] p-3 rounded-xl bg-[var(--gbLeft-box-background-color)] overflow-hidden lg:top-0 lg:right-0 lg:-translate-y-[65%] lg:-translate-x-[25%] lg:w-[11.5rem] lg:overflow-visible"
           >
+            <div
+              class="white-box-pointer absolute hidden bottom-0 right-0 translate-y-1/2 w-0 h-0 border-l-[50px] border-t-[50px] border-l-transparent border-t-[var(--gbLeft-box-background-color)] lg:inline"
+            ></div>
             <p
-              class="flex items-center gap-3 font-bold text-[var(--gbLeft-box-neutral-color)]"
+              class="flex items-center gap-3 text-[var(--gbLeft-box-neutral-color)]"
             >
-              <span class="text-5xl text-[var(--gbLeft-box-accent-color)]"
+              <span
+                class="text-4xl font-extrabold text-[var(--gbLeft-box-accent-color)]"
                 >185</span
               >
-              GB LEFT
+              <span class="text-sm font-bold">GB LEFT</span>
             </p>
           </div>
-        </article>
-      </section>
-    </main>
+        </section>
+      </article>
 
-    <!-- <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div> -->
+      <div class="attribution absolute bottom-0 px-5 py-3">
+        Challenge by
+        <a
+          href="https://www.frontendmentor.io/challenges/fylo-data-storage-component-1dZPRbV5n"
+          target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://www.frontendmentor.io/profile/sappakit" target="_blank"
+          >Sappakit Pipitwattana</a
+        >.
+      </div>
+    </main>
   </body>
 </html>

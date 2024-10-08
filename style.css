@@ -8,6 +8,8 @@
 }
 
 :root {
+  --background-color: hsl(229, 57%, 11%);
+
   --card-background-color: hsl(228, 56%, 26%);
   --icon-background-color: hsl(229, 57%, 11%);
 
@@ -26,4 +28,9 @@
 body {
   font-family: "Raleway", sans-serif;
   color: var(--font-neutral-color);
+}
+
+html,
+body {
+  height: 100%;
 }
